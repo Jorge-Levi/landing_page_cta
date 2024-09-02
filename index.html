@@ -1,65 +1,162 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Producto Innovador - Mejora tu Vida Hoy</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <!-- Cabecera -->
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Smartwatch Avanzado - Innovación en tu Muñeca</title>
+
+    <!-- Vinculación del archivo CSS principal -->
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- Vinculación a la CDN de Font Awesome para los iconos -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+  </head>
+  <body>
+    <!-- Cabecera con navegación -->
     <header>
-        <nav>
-            <ul>
-                <li><a href="#hero">Inicio</a></li>
-                <li><a href="#features">Características</a></li>
-                <li><a href="#testimonials">Testimonios</a></li>
-                <li><a href="#cta">Compra Ahora</a></li>
-            </ul>
-        </nav>
+      <nav>
+        <!-- Icono del menú para dispositivos móviles -->
+        <div class="menu-icon" id="menuIcon">&#9776;</div>
+        
+        <!-- Menú de navegación -->
+        <ul id="navMenu">
+          <li><a href="#hero">Inicio</a></li>
+          <li><a href="#features">Características</a></li>
+          <li><a href="#testimonials">Testimonios</a></li>
+          <li><a href="#cta">Compra Ahora</a></li>
+        </ul>
+      </nav>
     </header>
 
     <!-- Sección Hero -->
     <section id="hero">
-        <h1>Descubre el Producto que Transformará tu Vida</h1>
-        <p>Conoce cómo nuestro producto innovador puede ayudarte a alcanzar nuevos niveles de eficiencia y satisfacción.</p>
-        <button id="ctaButton">Empieza Ahora</button>
+      <h1>Revoluciona tu Estilo de Vida con Nuestro Smartwatch</h1>
+      <p>
+        Explora un mundo de tecnología avanzada directamente desde tu muñeca.
+        Monitoriza tu salud, mantente conectado y lleva tu día a día al
+        siguiente nivel.
+      </p>
+      <!-- Botón de llamada a la acción principal -->
+      <button id="ctaButton">Descúbrelo Ahora</button>
     </section>
 
     <!-- Sección de Características -->
     <section id="features">
-        <h2>¿Por Qué Elegirnos?</h2>
+      <h2>¿Por Qué Elegir Nuestro Smartwatch?</h2>
+      <!-- Grid de características -->
+      <div class="features-grid">
+        <!-- Característica 1: Salud Integral -->
         <div class="feature">
-            <img src="assets/feature1.jpg" alt="Característica 1">
-            <p>Optimización de tiempo: Nuestro producto te ayuda a completar tareas en una fracción del tiempo.</p>
+          <i class="fas fa-heartbeat"></i>
+          <h3>Salud Integral</h3>
+          <p>
+            Monitorización integral de la salud: Mantén un control completo de
+            tu ritmo cardíaco, sueño y actividad física con precisión médica.
+          </p>
         </div>
-        <div class=" feature">
-            <img src="assets/feature2.jpg" alt="Característica 2">
-            <p>Facilidad de uso: Diseñado pensando en ti, para que cualquier persona pueda utilizarlo sin complicaciones.</p>
-        </div>
+        <!-- Característica 2: Conectividad Sin Límites -->
         <div class="feature">
-            <img src="assets/feature3.jpg" alt="Característica 3">
-            <p>Calidad garantizada: Desarrollado con los más altos estándares para ofrecerte un rendimiento superior.</p>
+          <i class="fas fa-bell"></i>
+          <h3>Conectividad Sin Límites</h3>
+          <p>
+            Recibe notificaciones, llamadas y mensajes directamente en tu
+            muñeca, sin necesidad de sacar tu teléfono.
+          </p>
         </div>
+        <!-- Característica 3: Diseño Resistente -->
+        <div class="feature">
+          <i class="fas fa-shield-alt"></i>
+          <h3>Diseño Resistente</h3>
+          <p>
+            Diseño elegante y resistente: Combina estilo y durabilidad con un
+            diseño minimalista que se adapta a cualquier ocasión.
+          </p>
+        </div>
+      </div>
     </section>
 
     <!-- Sección de Testimonios -->
     <section id="testimonials">
-        <h2>Lo Que Dicen Nuestros Clientes</h2>
-        <blockquote>
-            "Este producto ha sido un cambio radical en mi rutina diaria. No sé cómo vivía antes sin él."
-            <cite>- María Pérez, Cliente Satisfecha</cite>
-        </blockquote>
-        <blockquote>
-            "La facilidad de uso y la calidad del producto son impresionantes. Lo recomiendo al 100%."
-            <cite>- Juan Gómez, Usuario Habitual</cite>
-        </blockquote>
+      <h2>Lo Que Dicen Nuestros Usuarios</h2>
+
+      <!-- Disposición en columnas para dispositivos grandes -->
+      <div class="testimonial-columns">
+        <!-- Testimonio 1 -->
+        <div class="testimonial-card">
+          <img src="assets/avatar1.jpg" alt="Avatar de Laura García" />
+          <blockquote>
+            "Este smartwatch ha transformado la manera en que gestiono mi día a
+            día. No solo es práctico, sino que también se ve increíble."
+          </blockquote>
+          <cite>- Laura García, Usuaria Satisfecha</cite>
+        </div>
+        <!-- Testimonio 2 -->
+        <div class="testimonial-card">
+          <img src="assets/avatar2.jpg" alt="Avatar de Carlos Martínez" />
+          <blockquote>
+            "La precisión de las funciones de salud es sorprendente. Me ayuda a
+            estar al tanto de mi bienestar de una manera que no había
+            experimentado antes."
+          </blockquote>
+          <cite>- Carlos Martínez, Usuario Frecuente</cite>
+        </div>
+        <!-- Testimonio 3 -->
+        <div class="testimonial-card">
+          <img src="assets/avatar3.jpg" alt="Avatar de María López" />
+          <blockquote>
+            "Elegancia y tecnología en un solo dispositivo. Este smartwatch es
+            todo lo que necesitaba para mi rutina diaria."
+          </blockquote>
+          <cite>- María López, Ejecutiva</cite>
+        </div>
+      </div>
+
+      <!-- Carrusel de testimonios para dispositivos móviles -->
+      <div class="testimonial-slider">
+        <!-- Testimonio 1 en carrusel -->
+        <div class="testimonial-card">
+          <img src="assets/avatar1.jpg" alt="Avatar de Laura García" />
+          <blockquote>
+            "Este smartwatch ha transformado la manera en que gestiono mi día a
+            día. No solo es práctico, sino que también se ve increíble."
+          </blockquote>
+          <cite>- Laura García, Usuaria Satisfecha</cite>
+        </div>
+        <!-- Testimonio 2 en carrusel -->
+        <div class="testimonial-card">
+          <img src="assets/avatar2.jpg" alt="Avatar de Carlos Martínez" />
+          <blockquote>
+            "La precisión de las funciones de salud es sorprendente. Me ayuda a
+            estar al tanto de mi bienestar de una manera que no había
+            experimentado antes."
+          </blockquote>
+          <cite>- Carlos Martínez, Usuario Frecuente</cite>
+        </div>
+        <!-- Testimonio 3 en carrusel -->
+        <div class="testimonial-card">
+          <img src="assets/avatar3.jpg" alt="Avatar de María López" />
+          <blockquote>
+            "Elegancia y tecnología en un solo dispositivo. Este smartwatch es
+            todo lo que necesitaba para mi rutina diaria."
+          </blockquote>
+          <cite>- María López, Ejecutiva</cite>
+        </div>
+      </div>
+
+      <!-- Navegación del carrusel -->
+      <div class="testimonial-nav">
+        <button class="prev">⟨</button>
+        <button class="next">⟩</button>
+      </div>
     </section>
 
     <!-- Sección de Llamada a la Acción -->
     <section id="cta">
-        <h2>¿Listo para Transformar tu Vida?</h2>
-        <button id="ctaButton2">Compra Ahora</button>
+      <h2>¿Estás Listo para Innovar tu Rutina?</h2>
+      <button id="ctaButton2">Compra tu Smartwatch</button>
     </section>
 
     <!-- Botón de Volver Arriba -->
@@ -67,9 +164,12 @@
 
     <!-- Pie de Página -->
     <footer>
-        <p>&copy; 2024 Innovación y Calidad S.A. Todos los derechos reservados.</p>
+      <p>
+        &copy; 2024 Tecnología Innovadora S.A. Todos los derechos reservados.
+      </p>
     </footer>
 
+    <!-- Archivo JavaScript principal -->
     <script src="script.js"></script>
-</body>
+  </body>
 </html>

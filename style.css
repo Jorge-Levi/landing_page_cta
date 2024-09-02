@@ -1,47 +1,99 @@
-/* Reset de márgenes y padding */
+/* 
+  Reset de márgenes y padding para asegurar una base consistente
+  en todos los navegadores y evitar problemas de espaciado.
+*/
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-}
-
-/* Estilos Generales */
-body {
-    font-family: Arial, sans-serif;
+  }
+  
+  /* 
+    Estilos Generales para la página: 
+    - Definimos una tipografía moderna y limpia.
+    - Ajustamos la altura de línea para mejorar la legibilidad.
+    - Asignamos un color de fondo claro y texto oscuro para buen contraste.
+  */
+  body {
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.6;
     background-color: #f4f4f4;
     color: #333;
-}
-
-/* Cabecera y Navegación */
-header {
+  }
+  
+  /* 
+    Cabecera y Navegación:
+    - Fondo oscuro con texto claro para destacar la cabecera.
+    - Uso de flexbox para alinear elementos y espaciar el contenido.
+  */
+  header {
     background-color: #333;
     color: #fff;
     padding: 10px 0;
-}
-
-header nav ul {
+    position: relative;
+    z-index: 1000;
+  }
+  
+  header nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+  }
+  
+  /* 
+    Ícono del menú (para dispositivos móviles):
+    - Oculto en pantallas grandes, visible en móviles.
+    - Incluye animación al pasar el mouse.
+  */
+  .menu-icon {
+    display: none;
+    font-size: 1.8em;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+  }
+  
+  .menu-icon:hover {
+    transform: scale(1.1);
+  }
+  
+  /* 
+    Lista de navegación:
+    - Estilo horizontal por defecto.
+    - Se adapta a vertical en móviles.
+    - Efecto hover en enlaces para mejor UX.
+  */
+  header nav ul {
     list-style: none;
     display: flex;
     justify-content: center;
-}
-
-header nav ul li {
+    transition: all 0.5s ease-in-out;
+  }
+  
+  header nav ul li {
     margin: 0 15px;
-}
-
-header nav ul li a {
+  }
+  
+  header nav ul li a {
     color: #fff;
     text-decoration: none;
-}
-
-header nav ul li a:hover {
-    text-decoration: underline;
-}
-
-/* Sección Hero */
-#hero {
-    background: url('assets/hero-bg.jpg') no-repeat center center/cover;
+    padding: 8px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+  }
+  
+  header nav ul li a:hover {
+    background-color: #555;
+  }
+  
+  /* 
+    Sección Hero:
+    - Imagen de fondo con superposición oscura para destacar el texto.
+    - Diseño centrado y responsivo.
+  */
+  #hero {
+    position: relative;
+    background: url("assets/hero-bg.jpg") no-repeat center center/cover;
     color: #fff;
     height: 100vh;
     text-align: center;
@@ -49,95 +101,472 @@ header nav ul li a:hover {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-}
-
-#hero h1 {
+    padding: 0 20px;
+    z-index: 1;
+  }
+  
+  #hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Superposición negra semitransparente */
+    z-index: -1;
+  }
+  
+  #hero h1 {
     font-size: 2.5em;
     margin-bottom: 20px;
-}
-
-#ctaButton {
+    max-width: 800px;
+    width: 100%;
+    color: #fff;
+    font-weight: 400;
+    z-index: 2;
+  }
+  
+  #hero p {
+    font-size: 1.2em;
+    margin-bottom: 30px;
+    max-width: 700px;
+    width: 100%;
+    color: #ddd; /* Texto más claro */
+    z-index: 2;
+  }
+  
+  /* 
+    Botón principal de llamada a la acción:
+    - Color vibrante que resalta sobre el fondo.
+    - Suave transición en hover para mejor interacción.
+  */
+  #ctaButton {
     background-color: #ff5733;
     color: #fff;
     border: none;
-    padding: 10px 20px;
+    padding: 15px 30px;
     cursor: pointer;
     font-size: 1.2em;
     transition: background-color 0.3s ease;
-}
-
-#ctaButton:hover {
+    border-radius: 5px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    z-index: 2;
+  }
+  
+  #ctaButton:hover {
     background-color: #c70039;
-}
-
-/* Sección de Características */
-#features {
-    padding: 50px 20px;
+  }
+  
+  /* 
+    Media Queries para Responsividad:
+    - Ajustes en tipografía y padding para mejorar la experiencia en pantallas pequeñas.
+  */
+  @media (max-width: 1024px) {
+    #hero h1 {
+      font-size: 2em;
+    }
+  
+    #hero p {
+      font-size: 1.1em;
+    }
+  
+    #ctaButton {
+      padding: 12px 25px;
+      font-size: 1.1em;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    #hero h1 {
+      font-size: 1.8em;
+    }
+  
+    #hero p {
+      font-size: 1em;
+    }
+  
+    #ctaButton {
+      padding: 10px 20px;
+      font-size: 1em;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    #hero h1 {
+      font-size: 1.5em;
+    }
+  
+    #hero p {
+      font-size: 0.9em;
+    }
+  
+    #ctaButton {
+      padding: 8px 18px;
+      font-size: 0.9em;
+    }
+  }
+  
+  /* 
+    Estilos para dispositivos móviles:
+    - Menu vertical para mejor uso del espacio en pantallas pequeñas.
+    - Animaciones y transiciones para un UX fluido.
+  */
+  @media (max-width: 600px) {
+    .menu-icon {
+      display: block;
+    }
+  
+    header nav ul {
+      display: flex;
+      flex-direction: column;
+      position: fixed;
+      top: 0;
+      right: -250px;
+      background-color: #333;
+      width: 250px;
+      height: 100vh;
+      padding-top: 60px;
+      text-align: right;
+      box-shadow: -2px 0 5px rgba(0, 0, 0, 0.5);
+      transition: right 0.3s ease;
+    }
+  
+    header nav ul.show {
+      right: 0;
+    }
+  
+    header nav ul li {
+      margin: 20px 0;
+    }
+  
+    header nav ul li a {
+      font-size: 1.2em;
+    }
+  
+    .menu-icon {
+      position: absolute;
+      top: 15px;
+      right: 20px;
+    }
+  
+    /* Animación del menú hamburguesa */
+    .menu-icon.active {
+      transform: rotate(90deg);
+      transition: transform 0.3s ease;
+    }
+  }
+  
+  /* 
+    Sección de Características:
+    - Uso de grid para una distribución uniforme.
+    - Animaciones sutiles para mejor interacción.
+  */
+  #features {
+    padding: 60px 20px;
     text-align: center;
     background-color: #fff;
-}
-
-#features h2 {
-    margin-bottom: 40px;
-    font-size: 2em;
-}
-
-.feature {
-    display: inline-block;
-    width: 30%;
-    margin: 10px;
-}
-
-.feature img {
-    max-width: 100%;
-    border-radius: 8px;
-}
-
-.feature p {
-    margin-top: 10px;
-}
-
-/* Sección de Testimonios */
-#testimonials {
+  }
+  
+  #features h2 {
+    margin-bottom: 50px;
+    font-size: 2.5em;
+    color: #222;
+  }
+  
+  .features-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+  }
+  
+  .feature {
     background-color: #f9f9f9;
-    padding: 50px 20px;
-    text-align: center;
-}
-
-#testimonials h2 {
-    margin-bottom: 40px;
-    font-size: 2em;
-}
-
-blockquote {
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .feature:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.2);
+  }
+  
+  .feature i {
+    font-size: 4em;
+    color: #ff5733;
+    margin-bottom: 20px;
+    transition: color 0.3s ease;
+  }
+  
+  .feature:hover i {
+    color: #c70039;
+  }
+  
+  .feature h3 {
     font-size: 1.5em;
-    margin: 20px auto;
-    max-width: 600px;
+    margin-bottom: 15px;
+    color: #333;
+  }
+  
+  .feature p {
+    color: #555;
+    font-size: 1.1em;
+    line-height: 1.6;
+  }
+  
+  /* 
+    Adaptación de la grid de características en pantallas más pequeñas.
+  */
+  @media (max-width: 1024px) {
+    .features-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .features-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+  
+  /* 
+    Animación de entrada para las características:
+    - Aparecen suavemente al hacer scroll.
+  */
+  .feature {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+  
+  .feature.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  /* 
+    Sección de Testimonios:
+    - Diseño centrado y limpio.
+    - Uso de grid para columnas en pantallas grandes y carrusel en móviles.
+  */
+  #testimonials {
+    padding: 60px 20px;
+    text-align: center;
+    background-color: #f4f4f4;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  #testimonials h2 {
+    margin-bottom: 50px;
+    font-size: 2.5em;
+    color: #222;
+  }
+  
+  /* 
+    Estilos generales para las tarjetas de testimonios:
+    - Fondo claro con sombras suaves.
+    - Animación en hover para una interacción más atractiva.
+  */
+  .testimonial-card {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    opacity: 0.9;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+  }
+  
+  .testimonial-card:hover {
+    transform: translateY(-10px);
+    opacity: 1;
+  }
+  
+  /* 
+    Mejora de las fotos de los testimonios:
+    - Fotos redondas con borde de color.
+    - Sombra y efecto hover para mayor impacto visual.
+  */
+  .testimonial-card img {
+    width: 100px; /* Aumentar el tamaño de la foto */
+    height: 100px;
+    border-radius: 50%; /* Mantener los bordes redondeados */
+    margin-bottom: 20px;
+    border: 4px solid #ff5733; /* Añadir un borde de color */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Añadir sombra */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .testimonial-card img:hover {
+    transform: scale(1.05); /* Aumentar el tamaño ligeramente al pasar el cursor */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3); /* Intensificar la sombra */
+  }
+  
+  /* 
+    Texto de los testimonios:
+    - Estilo claro y legible, con énfasis en citas.
+  */
+  .testimonial-card blockquote {
+    font-size: 1.3em;
     font-style: italic;
     color: #555;
-}
-
-blockquote cite {
+    margin: 20px 0;
+  }
+  
+  .testimonial-card cite {
     display: block;
-    margin-top: 10px;
-    font-size: 1.2em;
+    font-size: 1.1em;
     color: #333;
-}
-
-/* Sección de Llamada a la Acción */
-#cta {
+    margin-top: 10px;
+  }
+  
+  /* 
+    Carrusel visible solo en dispositivos móviles:
+    - Carrusel simple con botones de navegación.
+  */
+  .testimonial-slider {
+    display: none; /* Ocultar por defecto */
+    transition: transform 0.5s ease-in-out;
+    will-change: transform;
+  }
+  
+  .testimonial-nav {
+    display: none; /* Ocultar por defecto */
+    justify-content: center;
+    margin-top: 20px;
+  }
+  
+  /* 
+    Disposición en columnas para dispositivos grandes:
+    - Testimonios organizados en columnas en pantallas grandes.
+  */
+  .testimonial-columns {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+  }
+  
+  .testimonial-columns .testimonial-card {
+    flex: 1;
+    margin: 10px;
+  }
+  
+  /* 
+    Mostrar el carrusel en dispositivos móviles:
+    - Adaptar el diseño a pantallas pequeñas.
+  */
+  @media (max-width: 768px) {
+    .testimonial-columns {
+      display: none; /* Ocultar columnas en móviles */
+    }
+  
+    .testimonial-slider {
+      display: flex; /* Mostrar carrusel */
+    }
+  
+    .testimonial-card {
+      min-width: 100%;
+      box-sizing: border-box;
+    }
+  
+    .testimonial-nav {
+      display: flex; /* Mostrar navegación en móviles */
+    }
+  }
+  
+  /* 
+    Estilos para los botones del carrusel:
+    - Botones redondos con sombra y efectos hover.
+  */
+  .testimonial-nav button {
+    background-color: #ff5733;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    margin: 0 10px;
+    cursor: pointer;
+    border-radius: 50%;
+    font-size: 1.5em;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .testimonial-nav button:hover {
+    background-color: #c70039;
+    transform: scale(1.1);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  }
+  
+  .testimonial-nav button:focus {
+    outline: none;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  }
+  
+  .testimonial-nav button:active {
+    transform: scale(0.95);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  }
+  
+  /* 
+    Aseguramos que los botones estén centrados en el contenedor.
+  */
+  .testimonial-nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+  }
+  
+  /* 
+    Ocultar los botones en dispositivos grandes:
+    - Los botones solo se muestran en móviles.
+  */
+  @media (min-width: 769px) {
+    .testimonial-nav {
+      display: none; /* Ocultar la navegación del carrusel */
+    }
+  }
+  
+  /* 
+    Ajustes responsivos para la sección de testimonios:
+    - Mejoras en tipografía y tamaño de las imágenes en pantallas pequeñas.
+  */
+  @media (max-width: 480px) {
+    .testimonial-card blockquote {
+      font-size: 1.2em;
+    }
+  
+    .testimonial-card img {
+      width: 60px;
+      height: 60px;
+    }
+  }
+  
+  /* 
+    Sección de Llamada a la Acción:
+    - Diseño centrado con colores contrastantes.
+  */
+  #cta {
     background-color: #ff5733;
     color: #fff;
     padding: 50px 20px;
     text-align: center;
-}
-
-#cta h2 {
+  }
+  
+  #cta h2 {
     margin-bottom: 20px;
     font-size: 2em;
-}
-
-#cta button {
+  }
+  
+  #cta button {
     background-color: #333;
     color: #fff;
     border: none;
@@ -145,14 +574,18 @@ blockquote cite {
     cursor: pointer;
     font-size: 1.2em;
     transition: background-color 0.3s ease;
-}
-
-#cta button:hover {
+    border-radius: 5px;
+  }
+  
+  #cta button:hover {
     background-color: #555;
-}
-
-/* Botón de Volver Arriba */
-#backToTop {
+  }
+  
+  /* 
+    Botón de Volver Arriba:
+    - Botón fijo en la parte inferior derecha, visible solo al hacer scroll.
+  */
+  #backToTop {
     position: fixed;
     bottom: 20px;
     right: 20px;
@@ -164,117 +597,20 @@ blockquote cite {
     border-radius: 5px;
     cursor: pointer;
     font-size: 1.5em;
-}
-
-#backToTop:hover {
+  }
+  
+  #backToTop:hover {
     background-color: #555;
-}
-
-/* Pie de Página */
-footer {
+  }
+  
+  /* 
+    Pie de Página:
+    - Diseño simple y centrado, con fondo oscuro y texto claro.
+  */
+  footer {
     background-color: #333;
     color: #fff;
     text-align: center;
     padding: 10px 0;
-}
-
-/* Media Queries para Responsividad */
-
-/* Estilos para dispositivos con pantallas pequeñas (teléfonos móviles) */
-@media (max-width: 600px) {
-    body {
-        font-size: 14px;
-    }
-
-    #hero h1 {
-        font-size: 2em;
-    }
-
-    .feature {
-        display: block;
-        width: 100%;
-        margin-bottom: 20px;
-    }
-
-    #cta h2 {
-        font-size: 1.5em;
-    }
-
-    #cta button {
-        font-size: 1em;
-        padding: 8px 16px;
-    }
-
-    header nav ul {
-        flex-direction: column;
-    }
-
-    header nav ul li {
-        margin: 10px 0;
-    }
-}
-
-/* Estilos para dispositivos con pantallas medianas (tabletas) */
-@media (min-width: 601px) and (max-width: 1024px) {
-    body {
-        font-size: 16px;
-    }
-
-    #hero h1 {
-        font-size: 2.2em;
-    }
-
-    .feature {
-        display: inline-block;
-        width: 48%;
-        margin: 10px 1%;
-    }
-
-    #cta h2 {
-        font-size: 1.8em;
-    }
-
-    #cta button {
-        font-size: 1.1em;
-        padding: 9px 18px;
-    }
-
-    header nav ul {
-        flex-direction: row;
-    }
-
-    header nav ul li {
-        margin: 0 10px;
-    }
-}
-
-/* Estilos para dispositivos grandes (escritorios) */
-@media (min-width: 1025px) {
-    body {
-        font-size: 18px;
-    }
-
-    #hero h1 {
-        font-size: 2.5em;
-    }
-
-    .feature {
-        width: 30%;
-    }
-
-    #cta h2 {
-        font-size: 2em;
-    }
-
-    #cta button {
-        font-size: 1.2em;
-    }
-
-    header nav ul {
-        flex-direction: row;
-    }
-
-    header nav ul li {
-        margin: 0 15px;
-    }
-}
+  }
+  
